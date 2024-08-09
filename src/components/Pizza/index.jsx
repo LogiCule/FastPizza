@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 
 const Pizza = ({ name, ingredients, price, photoName, soldOut }) => {
   return (
-    <div className="pizza">
+    <li className={`pizza ${soldOut && "sold-out"}`}>
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
       </div>
-      <span>{price}</span>
-      {soldOut && <p>Sold Out</p>}
-    </div>
+      <span>{soldOut ? "SOLD OUT" : price}</span>
+      {}
+    </li>
   );
 };
 
